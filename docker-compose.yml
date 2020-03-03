@@ -1,0 +1,29 @@
+version: '3'
+services:
+   db:
+     image: mysql:5.7
+     ports:
+       - "3306:3306"
+     volumes:
+       - ./db_mysql:/var/lib/mysqld
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: Admin123
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: killasoft
+       MYSQL_PASSWORD: Admin12345.
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "80:80"
+     restart: always
+     volumes:
+       - ./wordpress:/var/www/html
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: killasoft
+       WORDPRESS_DB_PASSWORD: Admin12345.
+volumes:
+    db_data:
