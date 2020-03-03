@@ -10,10 +10,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Know IP Adress
+      run: |
+        ipconfig
     - name: Build
       run: |
         ls -l
-        ifconfig
         echo 'down compose'
         docker-compose down
         echo 'Runing docker-compose'
