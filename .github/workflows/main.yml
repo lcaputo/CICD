@@ -16,6 +16,6 @@ jobs:
         echo 'down compose'
         docker-compose down
         echo 'Runing docker-compose'
-        docker-compose up
+        docker-compose up -d
         echo 'Done'
         
