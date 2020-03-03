@@ -13,6 +13,7 @@ jobs:
     - name: Build
       run: |
         ls -l
+        ifconfig
         echo 'down compose'
         docker-compose down
         echo 'Runing docker-compose'
