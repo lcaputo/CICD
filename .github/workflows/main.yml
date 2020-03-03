@@ -13,6 +13,8 @@ jobs:
     - name: Build
       run: |
         ls -l
+        echo 'down compose'
+        docker-compose down
         echo 'Runing docker-compose'
         docker-compose up
         echo 'Done'
