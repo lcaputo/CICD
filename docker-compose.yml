@@ -27,3 +27,4 @@ services:
        WORDPRESS_DB_PASSWORD: Admin12345.
 volumes:
     db_data:
+
